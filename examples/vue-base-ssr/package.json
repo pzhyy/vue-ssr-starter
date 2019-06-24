@@ -1,5 +1,5 @@
 {
-  "name": "vue-cnnode-ssr",
+  "name": "vue-base-ssr",
   "description": "A Vue.js SSR project",
   "author": "zhouheng.pan <zhouheng.pan@foxmail.com>",
   "private": true,

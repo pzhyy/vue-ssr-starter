@@ -55,11 +55,28 @@ module.exports = {
                   loader: 'css-loader',
                   options: { minimize: true }
                 },
-                'sass-loader'
+                {
+                  loader: 'sass-loader',
+                  options: {
+                    data: '@import "~/assets/styles/variables.scss"'
+                  }
+                }
               ],
               fallback: 'vue-style-loader'
             })
-          : ['vue-style-loader', 'css-loader', 'sass-loader']
+          : [
+              'vue-style-loader',
+              'css-loader',
+              {
+                loader: 'sass-loader',
+                options: {
+                  data: '@import "assets/styles/env.scss";',
+                  includePaths: [
+                    path.resolve(__dirname, "../src")
+                  ]
+                }
+              }
+            ]
       },
     ]
   },

@@ -18,9 +18,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 .header {
   background-color: #fff;
+}
+.inner {
+  @extend .container;
 }
 </style>
 

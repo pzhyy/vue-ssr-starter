@@ -1,4 +1,4 @@
-# vue-cnnode-ssr
+# vue-base-ssr
 
 **Requires Node.js 7+**
 
