@@ -1,19 +1,23 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from "vue";
+import Router from "vue-router";
 
-Vue.use(Router)
+Vue.use(Router);
 
 // route-level code splitting
-const Topic = () => import('~/views/Topic.vue')
+const Home = () => import("~/views/Home.vue");
+const Post = () => import("~/views/Post.vue");
+const About = () => import("~/views/About.vue");
 
-export function createRouter () {
+export function createRouter() {
   return new Router({
-    mode: 'history',
+    mode: "history",
     fallback: false,
     scrollBehavior: () => ({ y: 0 }),
     routes: [
-      { path: '/topics/:type', component: Topic },
-      { path: '/', redirect: '/topics/all' }
+      { path: "/posts", name: "Home", component: Home },
+      { path: "/posts/:id", name: "Post", component: Post },
+      { path: "/about", name: "About", component: About },
+      { path: "/", redirect: "/posts" }
     ]
-  })
+  });
 }

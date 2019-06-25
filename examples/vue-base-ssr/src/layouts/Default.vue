@@ -1,24 +1,36 @@
 <template>
-  <div class="default-layout">
+  <div :class="$style.Wrapper">
     <Header></Header>
-    <transition name="fade" mode="out-in">
-      <router-view class="view"></router-view>
-    </transition>
+    <main>
+      <transition name="fade" mode="out-in">
+        <router-view></router-view>
+      </transition>
+    </main>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Header from '~/components/Header.vue'
+import Footer from '~/components/Footer.vue'
 
 export default {
-  name: 'DefaultLayout',
   components: {
-    Header
+    Header,
+    Footer
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 580px;
 
+  > main {
+    flex: 1;
+  }
+}
 </style>
-

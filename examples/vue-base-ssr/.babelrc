@@ -1,8 +1,8 @@
 {
-  "presets": [
-    ["env", { "modules": false }]
-  ],
+  "presets": [["env", { "modules": false }]],
   "plugins": [
-    "syntax-dynamic-import"
+    "syntax-dynamic-import",
+    "transform-runtime",
+    "transform-object-rest-spread"
   ]
 }

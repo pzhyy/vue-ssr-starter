@@ -25,7 +25,7 @@ module.exports = () => {
         content: faker.lorem.paragraphs(),
         category: faker.lorem.word(),
         authorId: faker.random.number({ min: 1, max: 10 }),
-        image: faker.image.image(),
+        image: faker.image.image(640, 320),
         viewCount: faker.random.number({ min: 1000, max: 10000 }),
         likeCount: faker.random.number({ min: 0, max: 1000 }),
         createdAt: faker.date.recent(10),

@@ -1,13 +1,17 @@
 <template>
-  <header class="header">
-    <nav class="inner">
+  <header :class="$style.Wrapper">
+    <nav :class="$style.Container">
       <router-link to="/" exact>
-        <img class="logo" src="~public/logo-48.png" alt="logo">
+        <img :class="$style.Logo" src="~public/logo-48.png" alt="logo">
       </router-link>
-      <router-link to="/topics/all">全部</router-link>
-      <router-link to="/topics/share">分享</router-link>
-      <router-link to="/topics/good">精华</router-link>
-      <router-link to="/topics/ask">问答</router-link>
+      <ul :class="$style.Navs">
+        <li>
+          <router-link to="/posts">Posts</router-link>
+        </li>
+        <li>
+          <router-link to="/about">About</router-link>
+        </li>
+      </ul>
     </nav>
   </header>
 </template>
@@ -19,11 +23,48 @@ export default {
 </script>
 
 <style lang="scss" module>
-.header {
+.Wrapper {
+  height: 48px;
   background-color: #fff;
 }
-.inner {
-  @extend .container;
+
+.Container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  @extend .Container;
+}
+
+.Logo {
+  width: 32px;
+  height: 32px;
+}
+
+.Navs {
+  display: flex;
+  padding: 0;
+  margin: 0 0 0 15px;
+  list-style: none;
+
+  > li {
+    margin-left: 10px;
+    margin-right: 10px;
+
+    a {
+      padding-left: 5px;
+      padding-right: 5px;
+      color: $default-text-color;
+      font-size: 16px;
+  
+      &:hover {
+        color: $primary-color;
+      }
+
+      &:global(.router-link-active) {
+        background-image: linear-gradient(#fff 50%, $primary-color 75%, #fff 90%);
+      }
+    }
+  }
 }
 </style>
 
