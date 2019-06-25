@@ -37,6 +37,7 @@ module.exports = () => {
         id: n + 1,
         postId: faker.random.number({ min: 1, max: 100 }),
         userId: faker.random.number({ min: 1, max: 100 }),
+        content: faker.lorem.sentences(),
         likeCount: faker.random.number({ min: 0, max: 1000 }),
         createdAt: faker.date.recent(10),
         updatedAt: faker.date.recent(1)
