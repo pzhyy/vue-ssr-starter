@@ -1,14 +1,14 @@
-import "~/assets/styles/index.scss";
+import "@/assets/styles/index.scss";
 import Vue from "vue";
 import App from "./App.vue";
 import { createStore } from "./store";
 import { createRouter } from "./router";
 import { sync } from "vuex-router-sync";
-import titleMixin from "./util/title";
+import seoMixin from "./util/seo";
 import * as filters from "./util/filters";
 
 // mixin for handling title
-Vue.mixin(titleMixin);
+Vue.mixin(seoMixin);
 
 // register global utility filters.
 Object.keys(filters).forEach(key => {

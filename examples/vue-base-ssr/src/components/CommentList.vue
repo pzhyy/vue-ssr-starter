@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Comment from '~/components/Comment.vue'
-import NoData from '~/components/NoData.vue'
+import Comment from '@/components/Comment.vue'
+import NoData from '@/components/NoData.vue'
 
 export default {
   components: {

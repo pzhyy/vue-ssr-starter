@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.Wrapper">
     <div :class="$style.Banner">
-      <img src="~~/assets/images/about-us-bg.jpg" alt="about us">
+      <img src="~@/assets/images/about-us-bg.jpg" alt="about us">
     </div>
     <div :class="$style.Container">
       <div :class="$style.Inner">
@@ -24,7 +24,11 @@
 
 <script>
 export default {
-  
+  seo: {
+    title: 'About',
+    keywords: 'vue base ssr',
+    description: 'This is a vue base ssr'
+  },
 }
 </script>
 

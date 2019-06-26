@@ -26,10 +26,10 @@
 </template>
 
 <script>
-import PostDetail from "~/components/PostDetail.vue";
-import CommentList from "~/components/CommentList.vue";
-import HotPostList from "~/components/HotPostList.vue";
-import Panel from "~/components/Panel.vue";
+import PostDetail from "@/components/PostDetail.vue";
+import CommentList from "@/components/CommentList.vue";
+import HotPostList from "@/components/HotPostList.vue";
+import Panel from "@/components/Panel.vue";
 
 export default {
   components: {
@@ -37,6 +37,16 @@ export default {
     CommentList,
     HotPostList,
     Panel
+  },
+
+  seo() {
+    const { title, summary } = this.post
+
+    return {
+      title: title,
+      keywords: title,
+      description: summary
+    }
   },
 
   async asyncData({ store, route }) {

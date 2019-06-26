@@ -6,10 +6,10 @@
       </router-link>
       <ul :class="$style.Navs">
         <li>
-          <router-link to="/posts">Posts</router-link>
+          <router-link :to="{ name: 'Home' }">Home</router-link>
         </li>
         <li>
-          <router-link to="/about">About</router-link>
+          <router-link :to="{ name: 'About' }">About</router-link>
         </li>
       </ul>
     </nav>

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import HotPost from "~/components/HotPost.vue";
+import HotPost from "@/components/HotPost.vue";
 
 export default {
   name: "PostList",

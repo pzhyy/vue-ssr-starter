@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import PostList from "~/components/PostList.vue";
-import HotPostList from "~/components/HotPostList.vue";
-import Pagination from "~/components/Pagination.vue";
-import Panel from "~/components/Panel.vue";
+import PostList from "@/components/PostList.vue";
+import HotPostList from "@/components/HotPostList.vue";
+import Pagination from "@/components/Pagination.vue";
+import Panel from "@/components/Panel.vue";
 
 export default {
   components: {
@@ -32,6 +32,12 @@ export default {
     HotPostList,
     Pagination,
     Panel
+  },
+
+  seo: {
+    title: 'Home',
+    keywords: 'vue base ssr',
+    description: 'This is a vue base ssr'
   },
 
   async asyncData({ store, route }) {

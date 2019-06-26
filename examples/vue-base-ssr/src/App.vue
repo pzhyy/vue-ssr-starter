@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import DefaultLayout from '~/layouts/Default.vue'
+import DefaultLayout from '@/layouts/Default.vue'
 
 export default {
   name: 'App',

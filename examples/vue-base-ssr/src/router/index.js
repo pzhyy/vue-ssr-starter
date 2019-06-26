@@ -4,9 +4,9 @@ import Router from "vue-router";
 Vue.use(Router);
 
 // route-level code splitting
-const Home = () => import("~/views/Home.vue");
-const Post = () => import("~/views/Post.vue");
-const About = () => import("~/views/About.vue");
+const Home = () => import("@/views/Home.vue");
+const Post = () => import("@/views/Post.vue");
+const About = () => import("@/views/About.vue");
 
 export function createRouter() {
   return new Router({
@@ -17,7 +17,7 @@ export function createRouter() {
       { path: "/posts", name: "Home", component: Home },
       { path: "/posts/:id", name: "Post", component: Post },
       { path: "/about", name: "About", component: About },
-      { path: "/", redirect: "/posts" }
+      { path: "/", redirect: { name: "Home" } }
     ]
   });
 }
