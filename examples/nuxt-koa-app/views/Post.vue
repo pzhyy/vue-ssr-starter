@@ -1,9 +1,14 @@
 <template>
   <div :class="$style.Wrapper">
+    <div :class="$style.Banner">
+      <img :src="post.image" :title="post.title" alt="post image">
+    </div>
     <div :class="$style.Container">
       <main :class="$style.Main">
-        <PostList :posts="posts"></PostList>
-        <Pagination :prev="prev" :next="next"></Pagination>
+        <PostDetail v-if="post" :post="post"></PostDetail>
+        <Panel title="Comments">
+          <CommentList :comments="comments"></CommentList>
+        </Panel>
       </main>
       <aside :class="$style.Aside">
         <Panel title="Hi">
@@ -21,48 +26,64 @@
 </template>
 
 <script>
-import PostList from "@/components/PostList.vue";
-import HotPostList from "@/components/HotPostList.vue";
-import Pagination from "@/components/Pagination.vue";
-import Panel from "@/components/Panel.vue";
+import PostDetail from '@/components/PostDetail.vue'
+import CommentList from '@/components/CommentList.vue'
+import HotPostList from '@/components/HotPostList.vue'
+import Panel from '@/components/Panel.vue'
 
 export default {
   components: {
-    PostList,
+    PostDetail,
+    CommentList,
     HotPostList,
-    Pagination,
     Panel
   },
 
-  seo: {
-    title: 'Home',
-    keywords: 'vue base ssr',
-    description: 'This is a vue base ssr'
+  head() {
+    const { title, summary } = this.post
+    console.log('this.post:', this.post)
+    return {
+      title,
+      meta: [
+        { hid: 'keywords', name: 'keywords', content: title },
+        { hid: 'description', name: 'description', content: summary }
+      ]
+    }
   },
 
-  async asyncData({ store, route }) {
-    const { page = '1' } = route.query
+  async fetch({ store, route }) {
+    const { id } = route.params
 
-    await store.dispatch("getPosts", {
-      _page: page,
+    await store.dispatch('getPostsById', {
+      id,
+      _expand: 'author'
+    })
+
+    await store.dispatch('getComments', {
+      _page: 1,
       _limit: 10,
-      _expand: "author"
-    });
+      _expand: 'user',
+      postId: id
+    })
 
-    await store.dispatch("getHotPosts", {
+    await store.dispatch('getHotPosts', {
       _page: 8,
       _limit: 10,
-      _expand: "author"
-    });
+      _expand: 'author'
+    })
   },
 
   computed: {
-    posts() {
-      return this.$store.state.posts;
+    post() {
+      return this.$store.state.post
+    },
+
+    comments() {
+      return this.$store.state.comments
     },
 
     hotPosts() {
-      return this.$store.state.hotPosts;
+      return this.$store.state.hotPosts
     },
 
     prev() {
@@ -81,7 +102,7 @@ export default {
           }
         })
 
-        return route.href;
+        return route.href
       }
 
       return fullPath
@@ -90,7 +111,7 @@ export default {
     next() {
       const { $router, $route } = this
       const { fullPath, query } = $route
-      const { page = '1' } = query
+      const { page = '0' } = query
       const currentPage = Number(page)
 
       if (currentPage < 10) {
@@ -103,19 +124,29 @@ export default {
           }
         })
 
-        return route.href;
+        return route.href
       }
 
       return fullPath
     }
   }
-};
+}
 </script>
 
 <style lang="scss" module>
 .Wrapper {
   width: 100%;
   height: 100%;
+}
+
+.Banner {
+  height: 300px;
+
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .Container {

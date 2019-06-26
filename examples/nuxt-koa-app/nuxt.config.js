@@ -1,5 +1,11 @@
 module.exports = {
   mode: 'universal',
+
+  server: {
+    host: '0.0.0.0',
+    port: 3002
+  },
+
   /*
    ** Headers of the page
    */
@@ -23,11 +29,11 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/styles/index.scss'],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['@/plugins/filters'],
   /*
    ** Nuxt.js modules
    */
@@ -35,13 +41,48 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/eslint-module'
+    [
+      '@nuxtjs/component-cache',
+      {
+        max: 1000,
+        maxAge: 1000 * 60 * 15
+      }
+    ]
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+
+  router: {
+    linkActiveClass: 'router-link-active',
+    linkExactActiveClass: 'router-link-exact-active',
+    extendRoutes(routes, resolve) {
+      routes.push(
+        {
+          path: '/',
+          redirect: { name: 'Home' }
+        },
+        {
+          name: 'Home',
+          path: '/posts',
+          component: '@/views/Home.vue'
+        },
+        {
+          name: 'Post',
+          path: '/posts/:id',
+          component: '@/views/Post.vue'
+        },
+        {
+          name: 'About',
+          path: '/about',
+          component: '@/views/About.vue'
+        }
+      )
+    }
+  },
+
   /*
    ** Build configuration
    */
@@ -49,6 +90,10 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      const { scss } = ctx.loaders
+
+      scss.data = '@import "~/assets/styles/env.scss";'
+    }
   }
 }

@@ -1,0 +1,9 @@
+$primary-color: #ff5722;
+
+$default-text-color: #333;
+$default-background: #f8f8f8;
+
+$link-color: $primary-color;
+$link-hover-color: lighten($link-color, 10);
+
+$transition-duration: .3s;
