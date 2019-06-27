@@ -36,8 +36,8 @@ export default {
 
   seo: {
     title: 'Home',
-    keywords: 'vue base ssr',
-    description: 'This is a vue base ssr'
+    keywords: 'view ssr',
+    description: 'This is a view ssr'
   },
 
   async asyncData({ store, route }) {
@@ -66,8 +66,7 @@ export default {
     },
 
     prev() {
-      const { $router, $route } = this
-      const { fullPath, query } = $route
+      const { fullPath, query } = this.$route
       const { page = '0' } = query
       const currentPage = Number(page)
 
@@ -88,8 +87,7 @@ export default {
     },
 
     next() {
-      const { $router, $route } = this
-      const { fullPath, query } = $route
+      const { fullPath, query } = this.$route
       const { page = '1' } = query
       const currentPage = Number(page)
 

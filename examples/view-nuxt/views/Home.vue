@@ -38,8 +38,8 @@ export default {
     return {
       title: 'Home',
       meta: [
-        { hid: 'keywords', name: 'keywords', content: 'vue base ssr' },
-        { hid: 'description', name: 'description', content: 'This is a vue base ssr' }
+        { hid: 'keywords', name: 'keywords', content: 'view nuxt' },
+        { hid: 'description', name: 'description', content: 'This is a view nuxt' }
       ]
     }
   },
@@ -72,8 +72,7 @@ export default {
     },
 
     prev() {
-      const { $router, $route } = this
-      const { fullPath, query } = $route
+      const { fullPath, query } = this.$route
       const { page = '0' } = query
       const currentPage = Number(page)
 
@@ -94,8 +93,7 @@ export default {
     },
 
     next() {
-      const { $router, $route } = this
-      const { fullPath, query } = $route
+      const { fullPath, query } = this.$route
       const { page = '1' } = query
       const currentPage = Number(page)
 

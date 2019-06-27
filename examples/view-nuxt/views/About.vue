@@ -26,8 +26,8 @@
 export default {
   seo: {
     title: 'About',
-    keywords: 'vue base ssr',
-    description: 'This is a vue base ssr'
+    keywords: 'view nuxt',
+    description: 'This is a view nuxt'
   }
 }
 </script>

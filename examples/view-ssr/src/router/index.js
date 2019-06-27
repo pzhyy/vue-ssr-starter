@@ -14,10 +14,10 @@ export function createRouter() {
     fallback: false,
     scrollBehavior: () => ({ y: 0 }),
     routes: [
+      { path: "/", redirect: { name: "Home" } },
       { path: "/posts", name: "Home", component: Home },
       { path: "/posts/:id", name: "Post", component: Post },
-      { path: "/about", name: "About", component: About },
-      { path: "/", redirect: { name: "Home" } }
+      { path: "/about", name: "About", component: About }
     ]
   });
 }

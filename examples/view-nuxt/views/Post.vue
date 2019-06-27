@@ -84,50 +84,6 @@ export default {
 
     hotPosts() {
       return this.$store.state.hotPosts
-    },
-
-    prev() {
-      const { $router, $route } = this
-      const { fullPath, query } = $route
-      const { page = '0' } = query
-      const currentPage = Number(page)
-
-      if (currentPage > 1) {
-        const prevPage = currentPage - 1
-        const route = this.$router.resolve({
-          name: 'Home',
-          query: {
-            ...query,
-            page: prevPage
-          }
-        })
-
-        return route.href
-      }
-
-      return fullPath
-    },
-
-    next() {
-      const { $router, $route } = this
-      const { fullPath, query } = $route
-      const { page = '0' } = query
-      const currentPage = Number(page)
-
-      if (currentPage < 10) {
-        const nextPage = currentPage + 1
-        const route = this.$router.resolve({
-          name: 'Home',
-          query: {
-            ...query,
-            page: nextPage
-          }
-        })
-
-        return route.href
-      }
-
-      return fullPath
     }
   }
 }
