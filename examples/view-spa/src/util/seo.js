@@ -13,7 +13,7 @@ const clientSeoMixin = {
     const seo = getSeo(this)
 
     if (seo) {
-      document.title = `${seo.title} - View SSR`
+      document.title = `${seo.title} - View SPA`
       document
         .querySelector('[name="keywords"]')
         .setAttribute('content', seo.keywords)

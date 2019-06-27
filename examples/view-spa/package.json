@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "start": "PORT=3003 node server/",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
@@ -11,6 +12,10 @@
     "axios": "^0.19.0",
     "core-js": "^2.6.5",
     "fecha": "^3.0.3",
+    "koa": "^2.7.0",
+    "koa-static": "^5.0.0",
+    "lru-cache": "^5.1.1",
+    "puppeteer": "^1.18.1",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
