@@ -11,15 +11,19 @@ const defaultOptions = {
   }
 }
 
-module.exports.render = async options => {
+module.exports.render = async (options = {}) => {
   const config = { ...defaultOptions, ...options }
   const cache = new LRU(config.cacheOptions)
   const userAgent = 'Puppeteer'
-  const browser = await puppeteer.launch({
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  })
+  const browser = await puppeteer.launch({ handleSIGINT: false })
 
   debug('Browser started')
+
+  // Manually close
+  process.on('SIGINT', () => {
+    browser.close()
+    process.exit(0)
+  })
 
   const prerender = async (url, timeout) => {
     const page = await browser.newPage()
@@ -56,7 +60,7 @@ module.exports.render = async options => {
     if (config.useCache && cache.get(url)) {
       debug('Cache hit')
       debug('Render Elapsed: %s ms', Date.now() - startTime)
-      return ctx.body = cache.get(url)
+      return (ctx.body = cache.get(url))
     }
 
     return prerender(url, config.timeout)
