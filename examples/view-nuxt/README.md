@@ -1,6 +1,6 @@
-# nuxt-koa-app
+# view-nuxt
 
-> My cool Nuxt.js project
+> View nuxt
 
 ## Build Setup
 

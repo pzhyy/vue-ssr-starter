@@ -41,7 +41,7 @@ export default {
 
   head() {
     const { title, summary } = this.post
-    console.log('this.post:', this.post)
+
     return {
       title,
       meta: [
