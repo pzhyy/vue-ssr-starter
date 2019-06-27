@@ -98,7 +98,7 @@ function render (req, res) {
   }
 
   const context = {
-    title: 'Vue Base SSR', // default title
+    title: 'View SSR', // default title
     url: req.url
   }
   renderer.renderToString(context, (err, html) => {

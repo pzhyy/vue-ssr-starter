@@ -1,6 +1,6 @@
 {
-  "name": "Vue Base SSR",
-  "short_name": "Vue Base",
+  "name": "View SSR",
+  "short_name": "View",
   "icons": [{
       "src": "/public/logo-120.png",
       "sizes": "120x120",

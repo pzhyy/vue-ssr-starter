@@ -1,4 +1,4 @@
-# vue-base-ssr
+# view-ssr
 
 **Requires Node.js 7+**
 

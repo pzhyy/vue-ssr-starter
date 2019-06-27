@@ -13,7 +13,7 @@ const serverSeoMixin = {
     const seo = getSeo(this);
 
     if (seo) {
-      this.$ssrContext.title = `${seo.title} - Vue Base SSR`;
+      this.$ssrContext.title = `${seo.title} - View SSR`;
       this.$ssrContext.keywords = seo.keywords;
       this.$ssrContext.description = seo.description;
     }
@@ -25,7 +25,7 @@ const clientSeoMixin = {
     const seo = getSeo(this);
 
     if (seo) {
-      document.title = `${seo.title} - Vue Base SSR`;
+      document.title = `${seo.title} - View SSR`;
       document
         .querySelector('[name="keywords"]')
         .setAttribute("content", seo.keywords);

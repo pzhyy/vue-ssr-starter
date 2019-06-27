@@ -1,7 +1,7 @@
 {
-  "name": "vue-base-ssr",
+  "name": "view-ssr",
   "description": "A Vue.js SSR project",
-  "author": "zhouheng.pan <zhouheng.pan@foxmail.com>",
+  "author": "Neal Pan",
   "private": true,
   "scripts": {
     "dev": "PORT=3001 node server",
