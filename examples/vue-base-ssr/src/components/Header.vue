@@ -2,7 +2,7 @@
   <header :class="$style.Wrapper">
     <nav :class="$style.Container">
       <router-link to="/" exact>
-        <img :class="$style.Logo" src="~public/logo-48.png" alt="logo">
+        <img :class="$style.Logo" src="/public/logo-48.png" alt="logo">
       </router-link>
       <ul :class="$style.Navs">
         <li>
@@ -55,7 +55,7 @@ export default {
       padding-right: 5px;
       color: $default-text-color;
       font-size: 16px;
-  
+
       &:hover {
         color: $primary-color;
       }
