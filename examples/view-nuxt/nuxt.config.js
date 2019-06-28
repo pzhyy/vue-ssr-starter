@@ -1,4 +1,6 @@
-module.exports = {
+import cache from './middleware/cache.js'
+
+export default {
   mode: 'universal',
 
   server: {
@@ -30,6 +32,16 @@ module.exports = {
    ** Global CSS
    */
   css: ['@/assets/styles/index.scss'],
+
+  serverMiddleware: [
+    cache({
+      debug: true,
+      useCache: true,
+      max: 1000,
+      maxAge: 1000 * 60 * 15  // 15min
+    })
+  ],
+
   /*
    ** Plugins to load before mounting the App
    */
@@ -45,7 +57,7 @@ module.exports = {
       '@nuxtjs/component-cache',
       {
         max: 1000,
-        maxAge: 1000 * 60 * 15
+        maxAge: 1000 * 60 * 15  // 15min
       }
     ]
   ],
