@@ -1,0 +1,77 @@
+<div class="Post_Wrapper_3L8Ep">
+  <div class="Post_Banner_38wC5">
+    <img src="{{post.image}}" title="{{post.title}}" alt="post image">
+  </div>
+  <div class="Post_Container_6QE6B">
+    <main class="Post_Main_3lBwS">
+      <article class="PostDetail_Wrapper_P0bbk">
+        <h1 class="PostDetail_Title_UbBAM">{{post.title}}</h1>
+        <ul class="PostDetail_Meta_1fF4U">
+          <li>Author: <output>{{post.author.name}}</output></li>
+          <li>Like: <output>{{post.likeCount}}</output></li>
+          <li>View: <output>{{post.viewCount}}</output></li>
+          <li>Created at: <output>{{formatDate post.createdAt 'YYYY-MM-DD'}}</output></li>
+        </ul>
+        <div class="PostDetail_Summary_2XwC7">{{post.summary}}</div>
+        <div class="PostDetail_Content_dMYFj">{{post.content}}</div>
+      </article>
+      <section class="$style.Wrapper">
+        <h3 class="Panel_Title_2cOAL">Comments</h3>
+        <div>
+          {{#if comments.length}}
+          <ul class="CommentList_Wrapper_896c5">
+            {{#each comments as |comment|}}
+            <li>
+              <div class="Comment_Wrapper_1I3fb">
+                <div class="Comment_Avatar_L6aVk">
+                  <img src="{{comment.user.avatar}}" title="{{comment.author.name}} avatar" alt="avatar">
+                </div>
+                <div class="Comment_Info_1vzoo">
+                  <div class="Comment_Meta_rw2mx"><b>{{comment.user.name}}</b>
+                    <div># {{add @index 1}}</div>
+                  </div>
+                  <div>{{comment.content}}</div>
+                </div>
+              </div>
+            </li>
+            {{/each}}
+          </ul>
+          {{else}}
+          <div class="NoData_Wrapper_2rqtu">No Content ‼️</div>
+          {{/if}}
+        </div>
+      </section>
+    </main>
+    <aside class="Post_Aside_3Y-0S">
+      <section class="$style.Wrapper">
+        <h3 class="Panel_Title_2cOAL">Hi</h3>
+        <div>
+          <div class="Post_Message_2EzQl">
+            Welcome to
+            <b>V</b>! It is an awesome site.
+          </div>
+        </div>
+      </section>
+      <section class="$style.Wrapper">
+        <h3 class="Panel_Title_2cOAL">Hot</h3>
+        <div>
+          <ul class="HotPostList_Wrapper_Lr8rR">
+            {{#each hotPosts as |post|}}
+            <li>
+              <article class="HotPost_Wrapper_1tKeY">
+                <a href="/posts/{{post.id}}" class="">
+                  <h3 class="HotPost_Title_3ip1v">{{post.title}}</h3>
+                  <ul class="HotPost_Meta_2N34s">
+                    <li>{{post.author.name}}</li>
+                    <li>{{formatDate post.createdAt 'YYYY-MM-DD'}}</li>
+                  </ul>
+                </a>
+              </article>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </section>
+    </aside>
+  </div>
+</div>

@@ -13,7 +13,7 @@
       </li>
       <li>
         Created at:
-        <output>{{ post.createdAt | formartDate('YYYY-MM-DD') }}</output>
+        <output>{{ post.createdAt | formatDate('YYYY-MM-DD') }}</output>
       </li>
     </ul>
     <div :class="$style.Summary">{{ post.summary }}</div>

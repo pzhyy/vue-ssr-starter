@@ -1,0 +1,17 @@
+<header class="Header_Wrapper_2voXj">
+  <nav class="Header_Container_2lERF">
+    <a href="/" class=""><img src="/logo-48.png" alt="logo" class="Header_Logo_3NnhW"></a>
+    <ul class="Header_Navs_2N1BU">
+      {{#eq active  'Home'}}
+      <li><a href="/posts" class="router-link-exact-active router-link-active">Home</a></li>
+      {{else}}
+      <li><a href="/posts" class="">Home</a></li>
+      {{/eq}}
+      {{#eq active 'About'}}
+      <li><a href="/about" class="router-link-exact-active router-link-active">About</a></li>
+      {{else}}
+      <li><a href="/about" class="">About</a></li>
+      {{/eq}}
+    </ul>
+  </nav>
+</header>

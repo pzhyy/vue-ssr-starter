@@ -1,6 +1,8 @@
 <template>
   <ul :class="$style.Wrapper">
-    <HotPost v-for="post in posts" :post="post" :key="post.id"></HotPost>
+    <li v-for="post in posts" :key="post.id">
+      <HotPost :post="post"></HotPost>
+    </li>
   </ul>
 </template>
 

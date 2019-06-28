@@ -1,0 +1,62 @@
+<div class="Home_Wrapper_Cw3cp">
+  <div class="Home_Container_20_dn">
+    <main class="Home_Main_2B2TH">
+      <ul class="PostList_Wrapper_1526q">
+        {{#each posts as |post|}}
+        <li>
+          <article class="Post_Wrapper_32b2M">
+            <a href="/posts/{{post.id}}" class="">
+              <div class="Post_Image_392sH">
+                <img src="{{post.image}}" title="{{post.title}}" alt="post image">
+              </div>
+              <div class="Post_Info_r6E3j">
+                <h3 class="Post_Title_3jRm1">{{post.title}}</h3>
+                <ul class="Post_Meta_16TEa">
+                  <li>{{post.author.name}}</li>
+                  <li>{{formatDate post.createdAt 'YYYY-MM-DD'}}</li>
+                </ul>
+                <div class="Post_Summary_GuAOg">{{post.summary}}</div>
+              </div>
+            </a>
+          </article>
+        </li>
+        {{/each}}
+      </ul>
+      <ul class="Pagination_Wrapper_3ltZt">
+        <li><a href="{{prev}}" class="router-link-exact-active router-link-active">Prev</a></li>
+        <li><a href="{{next}}" class="">Next</a></li>
+      </ul>
+    </main>
+    <aside class="Home_Aside_3I2HW">
+      <section class="$style.Wrapper">
+        <h3 class="Panel_Title_2cOAL">Hi</h3>
+        <div>
+          <div class="Home_Message_2glWi">
+            Welcome to
+            <b>V</b>! It is an awesome site.
+          </div>
+        </div>
+      </section>
+      <section class="$style.Wrapper">
+        <h3 class="Panel_Title_2cOAL">Hot</h3>
+        <div>
+          <ul class="HotPostList_Wrapper_Lr8rR">
+            {{#each hotPosts as |post|}}
+            <li>
+              <article class="HotPost_Wrapper_1tKeY">
+                <a href="/posts/{{post.id}}" class="">
+                  <h3 class="HotPost_Title_3ip1v">{{post.title}}</h3>
+                  <ul class="HotPost_Meta_2N34s">
+                    <li>{{post.author.name}}</li>
+                    <li>{{formatDate post.createdAt 'YYYY-MM-DD'}}</li>
+                  </ul>
+                </a>
+              </article>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+      </section>
+    </aside>
+  </div>
+</div>

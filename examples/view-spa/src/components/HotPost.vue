@@ -4,7 +4,7 @@
       <h3 :class="$style.Title">{{ post.title }}</h3>
       <ul :class="$style.Meta">
         <li>{{ post.author.name }}</li>
-        <li>{{ post.createdAt | formartDate('YYYY-MM-DD') }}</li>
+        <li>{{ post.createdAt | formatDate('YYYY-MM-DD') }}</li>
       </ul>
     </router-link>
   </article>

@@ -25,6 +25,6 @@ function pluralize(time, label) {
   return time + label + 's'
 }
 
-export function formartDate(date, formart) {
+export function formatDate(date, formart) {
   return fecha.format(new Date(date), formart)
 }

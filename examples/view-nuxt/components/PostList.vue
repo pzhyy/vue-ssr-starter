@@ -1,6 +1,8 @@
 <template>
   <ul :class="$style.Wrapper">
-    <Post v-for="post in posts" :post="post" :key="post.id"></Post>
+    <li v-for="post in posts" :key="post.id">
+      <Post :post="post"></Post>
+    </li>
   </ul>
 </template>
 
@@ -28,4 +30,3 @@ export default {
   list-style: none;
 }
 </style>
-
