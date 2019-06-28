@@ -28,6 +28,16 @@ export default {
    ** Customize the progress-bar color
    */
   loading: { color: '#fff' },
+
+  // Set dynamic routes
+  generate: {
+    routes: [
+      '/posts/1',
+      '/posts/2',
+      '/posts/3'
+    ]
+  },
+
   /*
    ** Global CSS
    */
@@ -99,6 +109,7 @@ export default {
    ** Build configuration
    */
   build: {
+    extractCSS: true,
     /*
      ** You can extend webpack config here
      */
