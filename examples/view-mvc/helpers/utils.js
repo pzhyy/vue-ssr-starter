@@ -1,6 +1,6 @@
 const querystring = require('querystring')
 
-exports.getPrevPageUrl = (ctx) => {
+exports.getPrevPageUrl = ctx => {
   const { path, url, query } = ctx
   const { page = '0' } = query
   const currentPage = Number(page)
@@ -16,7 +16,7 @@ exports.getPrevPageUrl = (ctx) => {
   return url
 }
 
-exports.getNextPageUrl = (ctx) => {
+exports.getNextPageUrl = ctx => {
   const { path, url, query } = ctx
   const { page = '1' } = query
   const currentPage = Number(page)

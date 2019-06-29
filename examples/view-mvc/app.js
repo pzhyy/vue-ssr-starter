@@ -9,16 +9,16 @@ const port = process.env.PORT || 3000
 
 app.use(serve('public/dist/'))
 
-app.use(handlebars({
-  layoutsDir: 'views/layouts/',
-  partialsDir: 'views/partials/',
-  defaultLayout: 'default',
-  helpers
-}))
+app.use(
+  handlebars({
+    layoutsDir: 'views/layouts/',
+    partialsDir: 'views/partials/',
+    defaultLayout: 'default',
+    helpers
+  })
+)
 
-app
-  .use(router.routes())
-  .use(router.allowedMethods())
+app.use(router.routes()).use(router.allowedMethods())
 
 app.listen(port)
 console.log(`Server started at http://localhost:${port}`)

@@ -1,9 +1,7 @@
 module.exports = ({ server }) => {
   return {
     getPosts(data) {
-      return server
-        .get('/posts', { params: data })
-        .then(({ data }) => data)
+      return server.get('/posts', { params: data }).then(({ data }) => data)
     },
 
     getPostsById(data) {

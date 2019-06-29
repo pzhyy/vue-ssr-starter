@@ -1,5 +1,5 @@
-const faker = require("faker");
-const _ = require("lodash");
+const faker = require('faker')
+const _ = require('lodash')
 
 module.exports = () => {
   return {
@@ -30,7 +30,7 @@ module.exports = () => {
         likeCount: faker.random.number({ min: 0, max: 1000 }),
         createdAt: faker.date.recent(10),
         updatedAt: faker.date.recent(1)
-      };
+      }
     }),
     comments: _.times(100, n => {
       return {
@@ -41,7 +41,7 @@ module.exports = () => {
         likeCount: faker.random.number({ min: 0, max: 1000 }),
         createdAt: faker.date.recent(10),
         updatedAt: faker.date.recent(1)
-      };
+      }
     })
-  };
-};
+  }
+}

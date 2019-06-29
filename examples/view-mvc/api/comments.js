@@ -1,9 +1,7 @@
 module.exports = ({ server }) => {
   return {
     getComments(data) {
-      return server
-        .get('/comments', { params: data })
-        .then(({ data }) => data)
+      return server.get('/comments', { params: data }).then(({ data }) => data)
     },
 
     getCommentsById(data) {

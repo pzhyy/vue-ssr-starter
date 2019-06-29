@@ -8,5 +8,8 @@ router.redirect('/', '/posts')
 router.get('/posts', posts.index)
 router.get('/posts/:id', posts.show)
 router.get('/about', about.index)
+router.get('/empty', ctx => {
+  ctx.body = { empty: 'empty' }
+})
 
 module.exports = router
