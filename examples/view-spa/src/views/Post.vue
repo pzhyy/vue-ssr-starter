@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.Wrapper" v-if="!!post">
     <div :class="$style.Banner">
-      <img :src="post.image" :title="post.title" alt="post image" />
+      <img :src="post.image" :title="post.title" alt="post image">
     </div>
     <div :class="$style.Container">
       <main :class="$style.Main">

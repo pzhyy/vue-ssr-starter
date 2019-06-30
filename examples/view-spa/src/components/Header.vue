@@ -2,7 +2,7 @@
   <header :class="$style.Wrapper">
     <nav :class="$style.Container">
       <router-link to="/" exact>
-        <img :class="$style.Logo" src="/logo-48.png" alt="logo" />
+        <img :class="$style.Logo" src="/logo-48.png" alt="logo">
       </router-link>
       <ul :class="$style.Navs">
         <li>

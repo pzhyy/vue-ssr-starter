@@ -1,8 +1,6 @@
 <template>
   <footer :class="$style.Wrapper">
-    <div :class="$style.Container">
-      Copyright &copy; 2019
-    </div>
+    <div :class="$style.Container">Copyright &copy; 2019</div>
   </footer>
 </template>
 

@@ -2,7 +2,7 @@
   <article :class="$style.Wrapper">
     <router-link :to="{ name: 'Post', params: { id: post.id } }">
       <div :class="$style.Image">
-        <img :src="post.image" :title="post.title" alt="post image" />
+        <img :src="post.image" :title="post.title" alt="post image">
       </div>
       <div :class="$style.Info">
         <h3 :class="$style.Title">{{ post.title }}</h3>

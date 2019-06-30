@@ -4,8 +4,8 @@ export default {
   mode: 'universal',
 
   server: {
-    host: '0.0.0.0',
-    port: 3002
+    host: 'localhost',
+    port: 3003
   },
 
   /*
@@ -31,11 +31,7 @@ export default {
 
   // Set dynamic routes
   generate: {
-    routes: [
-      '/posts/1',
-      '/posts/2',
-      '/posts/3'
-    ]
+    routes: ['/posts/1', '/posts/2', '/posts/3']
   },
 
   /*
@@ -48,7 +44,7 @@ export default {
       debug: true,
       useCache: true,
       max: 1000,
-      maxAge: 1000 * 60 * 15  // 15min
+      maxAge: 1000 * 60 * 15 // 15min
     })
   ],
 
@@ -67,7 +63,7 @@ export default {
       '@nuxtjs/component-cache',
       {
         max: 1000,
-        maxAge: 1000 * 60 * 15  // 15min
+        maxAge: 1000 * 60 * 15 // 15min
       }
     ]
   ],

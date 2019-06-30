@@ -39,7 +39,11 @@ export default {
       title: 'Home',
       meta: [
         { hid: 'keywords', name: 'keywords', content: 'view nuxt' },
-        { hid: 'description', name: 'description', content: 'This is a view nuxt' }
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'This is a view nuxt'
+        }
       ]
     }
   },

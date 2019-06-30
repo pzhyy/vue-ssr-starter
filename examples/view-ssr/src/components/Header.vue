@@ -61,7 +61,11 @@ export default {
       }
 
       &:global(.router-link-active) {
-        background-image: linear-gradient(#fff 50%, $primary-color 75%, #fff 90%);
+        background-image: linear-gradient(
+          #fff 50%,
+          $primary-color 75%,
+          #fff 90%
+        );
       }
     }
   }

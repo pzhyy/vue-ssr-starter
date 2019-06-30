@@ -1,11 +1,7 @@
 <template>
   <div :class="$style.Wrapper" v-if="comment">
     <div :class="$style.Avatar">
-      <img
-        :src="comment.user.avatar"
-        :title="`${comment.user.name} avatar`"
-        alt="avatar"
-      />
+      <img :src="comment.user.avatar" :title="`${comment.user.name} avatar`" alt="avatar">
     </div>
     <div :class="$style.Info">
       <div :class="$style.Meta">

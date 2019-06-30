@@ -1,5 +1,6 @@
 {
   "name": "view-ssr",
+  "version": "1.0.0",
   "description": "A Vue.js SSR project",
   "author": "Neal Pan",
   "private": true,

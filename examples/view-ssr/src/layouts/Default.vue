@@ -34,10 +34,12 @@ export default {
   }
 }
 
-:global(.fade-enter-active), :global(.fade-leave-active) {
-  transition: all .2s ease;
+:global(.fade-enter-active),
+:global(.fade-leave-active) {
+  transition: all 0.2s ease;
 }
-:global(.fade-enter), :global(.fade-leave-to) {
+:global(.fade-enter),
+:global(.fade-leave-to) {
   opacity: 0;
 }
 </style>

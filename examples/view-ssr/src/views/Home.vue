@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import PostList from "@/components/PostList.vue";
-import HotPostList from "@/components/HotPostList.vue";
-import Pagination from "@/components/Pagination.vue";
-import Panel from "@/components/Panel.vue";
+import PostList from '@/components/PostList.vue'
+import HotPostList from '@/components/HotPostList.vue'
+import Pagination from '@/components/Pagination.vue'
+import Panel from '@/components/Panel.vue'
 
 export default {
   components: {
@@ -43,26 +43,26 @@ export default {
   async asyncData({ store, route }) {
     const { page = '1' } = route.query
 
-    await store.dispatch("getPosts", {
+    await store.dispatch('getPosts', {
       _page: page,
       _limit: 10,
-      _expand: "author"
-    });
+      _expand: 'author'
+    })
 
-    await store.dispatch("getHotPosts", {
+    await store.dispatch('getHotPosts', {
       _page: 8,
       _limit: 10,
-      _expand: "author"
-    });
+      _expand: 'author'
+    })
   },
 
   computed: {
     posts() {
-      return this.$store.state.posts;
+      return this.$store.state.posts
     },
 
     hotPosts() {
-      return this.$store.state.hotPosts;
+      return this.$store.state.hotPosts
     },
 
     prev() {
@@ -80,7 +80,7 @@ export default {
           }
         })
 
-        return route.href;
+        return route.href
       }
 
       return fullPath
@@ -101,13 +101,13 @@ export default {
           }
         })
 
-        return route.href;
+        return route.href
       }
 
       return fullPath
     }
   }
-};
+}
 </script>
 
 <style lang="scss" module>

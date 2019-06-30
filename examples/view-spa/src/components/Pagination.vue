@@ -1,7 +1,11 @@
 <template>
   <ul :class="$style.Wrapper">
-    <li><router-link :to="prev">Prev</router-link></li>
-    <li><router-link :to="next">Next</router-link></li>
+    <li>
+      <router-link :to="prev">Prev</router-link>
+    </li>
+    <li>
+      <router-link :to="next">Next</router-link>
+    </li>
   </ul>
 </template>
 

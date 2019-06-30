@@ -28,7 +28,7 @@ export default {
     title: 'About',
     keywords: 'view ssr',
     description: 'This is a view ssr'
-  },
+  }
 }
 </script>
 

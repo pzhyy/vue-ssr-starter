@@ -1,13 +1,9 @@
 <template>
-  <div :class="$style.Wrapper">
-    No Content ‼️
-  </div>
+  <div :class="$style.Wrapper">No Content ‼️</div>
 </template>
 
 <script>
-export default {
-  
-}
+export default {}
 </script>
 
 <style lang="scss" module>

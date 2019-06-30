@@ -2,10 +2,22 @@
   <article :class="$style.Wrapper" v-if="post">
     <h1 :class="$style.Title">{{ post.title }}</h1>
     <ul :class="$style.Meta">
-      <li>Author: <output>{{ post.author.name }}</output></li>
-      <li>Like: <output>{{ post.likeCount }}</output></li>
-      <li>View: <output>{{ post.viewCount }}</output></li>
-      <li>Created at: <output>{{ post.createdAt | formartDate('YYYY-MM-DD') }}</output></li>
+      <li>
+        Author:
+        <output>{{ post.author.name }}</output>
+      </li>
+      <li>
+        Like:
+        <output>{{ post.likeCount }}</output>
+      </li>
+      <li>
+        View:
+        <output>{{ post.viewCount }}</output>
+      </li>
+      <li>
+        Created at:
+        <output>{{ post.createdAt | formartDate('YYYY-MM-DD') }}</output>
+      </li>
     </ul>
     <div :class="$style.Summary">{{ post.summary }}</div>
     <div :class="$style.Content">{{ post.content }}</div>

@@ -26,10 +26,10 @@
 </template>
 
 <script>
-import PostDetail from "@/components/PostDetail.vue";
-import CommentList from "@/components/CommentList.vue";
-import HotPostList from "@/components/HotPostList.vue";
-import Panel from "@/components/Panel.vue";
+import PostDetail from '@/components/PostDetail.vue'
+import CommentList from '@/components/CommentList.vue'
+import HotPostList from '@/components/HotPostList.vue'
+import Panel from '@/components/Panel.vue'
 
 export default {
   components: {
@@ -52,39 +52,39 @@ export default {
   async asyncData({ store, route }) {
     const { id } = route.params
 
-    await store.dispatch("getPostsById", {
+    await store.dispatch('getPostsById', {
       id,
-      _expand: "author"
-    });
+      _expand: 'author'
+    })
 
-    await store.dispatch("getComments", {
+    await store.dispatch('getComments', {
       _page: 1,
       _limit: 10,
-      _expand: "user",
+      _expand: 'user',
       postId: id
-    });
+    })
 
-    await store.dispatch("getHotPosts", {
+    await store.dispatch('getHotPosts', {
       _page: 8,
       _limit: 10,
-      _expand: "author"
-    });
+      _expand: 'author'
+    })
   },
 
   computed: {
     post() {
-      return this.$store.state.post;
+      return this.$store.state.post
     },
 
     comments() {
-      return this.$store.state.comments;
+      return this.$store.state.comments
     },
 
     hotPosts() {
-      return this.$store.state.hotPosts;
+      return this.$store.state.hotPosts
     }
   }
-};
+}
 </script>
 
 <style lang="scss" module>

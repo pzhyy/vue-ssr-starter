@@ -3,13 +3,16 @@
     <h1 :class="$style.Title">{{ post.title }}</h1>
     <ul :class="$style.Meta">
       <li>
-        Author: <output>{{ post.author.name }}</output>
+        Author:
+        <output>{{ post.author.name }}</output>
       </li>
       <li>
-        Like: <output>{{ post.likeCount }}</output>
+        Like:
+        <output>{{ post.likeCount }}</output>
       </li>
       <li>
-        View: <output>{{ post.viewCount }}</output>
+        View:
+        <output>{{ post.viewCount }}</output>
       </li>
       <li>
         Created at:

@@ -1,7 +1,9 @@
 <template>
   <section class="$style.Wrapper">
     <h3 :class="$style.Title">{{ title }}</h3>
-    <div><slot></slot></div>
+    <div>
+      <slot></slot>
+    </div>
   </section>
 </template>
 
