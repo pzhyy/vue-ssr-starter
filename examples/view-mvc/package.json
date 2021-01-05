@@ -15,7 +15,7 @@
   "author": "Neal Pan",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "fecha": "^3.0.3",
     "koa": "^2.7.0",
     "koa-handlebars": "^2.0.0",
